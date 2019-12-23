@@ -69,7 +69,7 @@ const removeOne = (num, arr) => {
 
 const removeElements = (arr, callback) => {
   // Solution code here...
-  for(let i = 0; i<arr.length() ;i++){
+  for(let i = 0; i < arr.length ;i++){
     callback(arr[i],arr);
   };
   return arr;
@@ -159,11 +159,17 @@ const fizzbuzz = (arr) => {
   let outputArr = [];
   arr.forEach(i=>{
     if(i%3 === 0){
-      outputArr.push("Fizz");
+      if(i%5 === 0){
+        outputArr.push("Fizz Buzz");
+      }else {
+        outputArr.push("Fizz");
+      }
     }else if(i%5 === 0){
+      if(i%3 === 0){
+        outputArr.push("Fizz Buzz");
+      }else{
       outputArr.push("Buzz");
-    }else if(i%3 === 0 && i%5 === 0){
-      outputArr.push("Fizz Buzz");
+      }
     }else{
       outputArr.push(i);
     }

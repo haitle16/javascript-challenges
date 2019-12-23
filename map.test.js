@@ -13,7 +13,7 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
   for(let i =0; i < arr.length; i++){
-    arr[i] = arr[i] * 2;
+    arr[i] = arr[i] ^ 2;
   }
   return arr;
 
@@ -28,7 +28,7 @@ Write a function named forEachTwoToThe that produces the same output as your for
 const forEachTwoToThe = (arr) => {
   // Solution code here...
   arr.forEach(i=>{
-    i = i * 2;
+    i = i ^ 2;
   })
   return arr;
 };
@@ -41,7 +41,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
-  return arr.map(x => x * 2);
+  return arr.map(x => x ^ 2);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,8 +75,10 @@ const evenOdd = (arr) => {
   arr.map(element => {
     if(element%2 === 0){
       newArr.push('even');
-    }else{
+    }else if(Number.isInteger(element)){
       newArr.push('odd');
+    }else{
+      newArr.push('N/A');
     }
   });
   return newArr;
